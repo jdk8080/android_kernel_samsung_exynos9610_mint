@@ -10,10 +10,10 @@ jobs:
       fail-fast: false
       matrix:
         device: [a50]
-        variant: [oneui, aosp]
-        ksu: ['', -k]
-        susfs: ['', -s]
-        selinux: ['', -p]
+        variant: [oneui]
+        ksu: [-k]
+        susfs: [-s]
+        selinux: ['']
         exclude:
         - ksu: ''
           susfs: -s
