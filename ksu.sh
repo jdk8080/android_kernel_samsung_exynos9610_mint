@@ -2,10 +2,9 @@
 
 [ ! -e "KernelSU/kernel/setup.sh" ] && \
 git clone https://github.com/KernelSU-Next/KernelSU-Next KernelSU && 
-cd KernelSU && git branch v1.1.1 && 
+cd KernelSU && git checkout be141d05d03f37f67ae1505dbbe56cadbfcad130
 cd ../
 
 if [[ $BUILD_SUSFS == 'true' && $BUILD_KERNEL_KSU == 'true' ]]; then
-    cd KernelSU && git checkout next-susfs && cd ../
     patch -p1 < susfs.patch
 fi
